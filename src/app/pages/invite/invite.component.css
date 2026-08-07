@@ -1,0 +1,144 @@
+
+
+.invite-page {
+  --cover-gold: #b88a3b;
+  --cover-maroon: #5e1f2e;
+
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 11vh 22px 26vh;
+  scroll-snap-align: start;
+  background-color: #f4ead9;
+  background-image: url('/assets/images/Bg-2.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.invite-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  font-size: clamp(1.3rem, 5.6vw, 1.7rem);
+  color: var(--cover-maroon);
+  margin: 40px 0 0;
+}
+
+.invite-scratch {
+  margin: -16px 0 -12px;
+}
+
+.invite-copy {
+  font-family: var(--font-body);
+  font-size: clamp(0.74rem, 3vw, 0.85rem);
+  line-height: 1.5;
+  color: var(--invite-text, #49352b);
+  max-width: 270px;
+  margin: 0 0 10px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 220px;
+  margin: 6px 0;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--cover-gold);
+  opacity: 0.7;
+}
+
+.divider .dot {
+  color: var(--cover-gold);
+  font-size: 0.75rem;
+}
+
+.blessing,
+.hosts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 8px 0;
+}
+
+.blessing-label,
+.hosts-label {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cover-gold);
+}
+
+.blessing-name,
+.hosts-name {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(0.8rem, 3.3vw, 0.92rem);
+  color: var(--cover-maroon);
+}
+
+.location {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--invite-text, #49352b);
+  margin: 4px 0 0;
+}
+
+/* Staggered reveal, matching the names page pattern. */
+.reveal {
+  opacity: 0;
+  animation: inviteRise 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-1 {
+  animation-delay: 250ms;
+}
+
+.reveal-2 {
+  animation-delay: 550ms;
+}
+
+.reveal-3 {
+  animation-delay: 800ms;
+}
+
+.reveal-4 {
+  animation-delay: 1000ms;
+}
+
+.reveal-5 {
+  animation-delay: 1200ms;
+}
+
+@keyframes inviteRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+

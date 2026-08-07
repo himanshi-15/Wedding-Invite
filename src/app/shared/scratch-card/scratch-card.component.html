@@ -1,0 +1,22 @@
+
+
+<div class="scratch-card">
+  <div class="reveal-content">
+    <div class="reveal-ring">
+      <span class="reveal-day">{{ revealDay }}</span>
+      <span class="reveal-month">{{ revealMonth }}</span>
+      <span class="reveal-year">{{ revealYear }}</span>
+    </div>
+  </div>
+  <canvas
+    #canvasEl
+    class="scratch-canvas"
+    (pointerdown)="onPointerDown($event)"
+    (pointermove)="onPointerMove($event)"
+    (pointerup)="onPointerUp()"
+    (pointerleave)="onPointerUp()"
+  ></canvas>
+  <img class="frame-overlay" src="/assets/images/ScratchFrame.png" alt="" aria-hidden="true" />
+</div>
+
+

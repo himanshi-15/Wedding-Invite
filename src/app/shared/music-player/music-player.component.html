@@ -1,0 +1,22 @@
+
+
+<audio #audioEl loop preload="auto" playsinline>
+  <source src="assets/audio/Wedding.mp3" type="audio/mpeg" />
+</audio>
+<div class="music-toggle-wrap">
+  <button
+    type="button"
+    class="music-toggle"
+    [class.playing]="isPlaying && !isMuted"
+    (click)="toggle()"
+    [attr.aria-pressed]="isPlaying && !isMuted"
+    aria-label="Toggle background music"
+  >
+    <span class="disc" aria-hidden="true">♪</span>
+  </button>
+  <div class="music-tooltip">
+    {{ musicLabel }}
+  </div>
+</div>
+
+

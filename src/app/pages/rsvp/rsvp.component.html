@@ -1,0 +1,113 @@
+<section class="rsvp-page">
+  <h1 class="rsvp-title reveal">We'd Love To<br />Celebrate With You</h1>
+
+  <div class="divider reveal" aria-hidden="true">
+    <span class="line"></span>
+    <span class="dot">❖</span>
+    <span class="line"></span>
+  </div>
+
+  <p class="rsvp-copy reveal reveal-1">
+    Kindly let us know if you'll be joining us on our special day.
+  </p>
+
+  <form class="rsvp-form reveal reveal-2" *ngIf="!submitted" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label class="field-label">
+        <span class="field-step">1</span>
+        Your Name
+      </label>
+      <input
+        type="text"
+        class="text-input"
+        name="guestName"
+        placeholder="Enter your full name"
+        [(ngModel)]="guestName"
+        required
+      />
+    </div>
+
+    <div class="form-field">
+      <label class="field-label">
+        <span class="field-step">2</span>
+        Will you be joining us?
+      </label>
+      <div class="attend-toggle">
+        <button
+          type="button"
+          class="attend-btn attend-btn-yes"
+          [class.active]="attending === 'yes'"
+          (click)="attending = 'yes'"
+        >
+          <span class="attend-icon">✓</span>
+          Yes, I'll be there
+        </button>
+        <button
+          type="button"
+          class="attend-btn attend-btn-no"
+          [class.active]="attending === 'no'"
+          (click)="attending = 'no'; guestCount = ''"
+        >
+          <span class="attend-icon">✕</span>
+          Sorry, I won't
+        </button>
+      </div>
+    </div>
+
+    <div class="form-field" *ngIf="attending === 'yes'">
+      <label class="field-label">
+        <span class="field-step">3</span>
+        Number of Guests
+      </label>
+      <div class="guest-dropdown" [class.open]="showGuestOptions">
+        <button type="button" class="dropdown-trigger" (click)="toggleGuestOptions()">
+          <span>{{ guestCount || 'Select number of guests' }}</span>
+          <span class="chevron">⌄</span>
+        </button>
+        <ul class="dropdown-list" *ngIf="showGuestOptions">
+          <li
+            *ngFor="let option of guestOptions"
+            [class.selected]="guestCount === option"
+            (click)="selectGuestCount(option)"
+          >
+            {{ option }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn" [disabled]="!canSubmit() || submitting">
+      <span class="check">✓</span>
+      {{ submitting ? 'Submitting…' : 'Submit' }}
+    </button>
+
+    <p class="submit-error" *ngIf="submitError">
+      Something went wrong sending your response. Please try again.
+    </p>
+  </form>
+
+  <ng-container *ngIf="submitted">
+    <button type="button" class="submit-btn submitted reveal reveal-2" disabled>
+      <span class="check">✓</span>
+      Submitted
+    </button>
+    <p class="thank-you reveal reveal-3">
+      Thank you for your blessings and<br />for taking the time to respond.
+    </p>
+  </ng-container>
+
+  <div class="divider reveal reveal-4" aria-hidden="true">
+    <span class="line"></span>
+    <span class="dot">❖</span>
+    <span class="line"></span>
+  </div>
+
+  <div class="venue-card reveal reveal-4">
+    <p class="venue-label">Wedding Venue</p>
+    <p class="venue-name">Veda Palace</p>
+    <p class="venue-location">Hamirpur, Himachal Pradesh</p>
+    <a class="maps-btn" [href]="mapsUrl" target="_blank" rel="noopener noreferrer">
+      Open in Google Maps
+    </a>
+  </div>
+</section>

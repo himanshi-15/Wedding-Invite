@@ -1,0 +1,140 @@
+
+
+.closing-page {
+  --cover-gold: #b88a3b;
+  --cover-maroon: #5e1f2e;
+
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30vh 24px 34px;
+  scroll-snap-align: start;
+  background-color: #f4ead9;
+  background-image: url('/assets/images/Bg-7.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.sanskrit {
+  font-family: var(--font-devanagari);
+  font-size: clamp(2rem, 10vw, 3rem);
+  font-weight: 700;
+  color: var(--cover-maroon);
+  letter-spacing: 0.02em;
+  margin: 0 0 14px;
+}
+
+.closing-copy {
+  font-family: var(--font-body);
+  font-size: clamp(0.85rem, 3.6vw, 1rem);
+  line-height: 1.5;
+  color: var(--invite-text, #49352b);
+  max-width: 260px;
+  margin: 0 0 18px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 180px;
+  margin: 0 0 18px;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--cover-gold);
+  opacity: 0.7;
+}
+
+.divider .heart {
+  color: var(--cover-maroon);
+  font-size: 0.9rem;
+}
+
+.regards {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 22px;
+}
+
+.regards-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cover-gold);
+}
+
+.regards-name {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: clamp(1.05rem, 4.4vw, 1.25rem);
+  color: var(--cover-maroon);
+}
+
+.closing-date {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  color: var(--cover-maroon);
+  margin: 0 0 2px;
+}
+
+.closing-location {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--invite-text, #49352b);
+  margin: 0;
+}
+
+/* Staggered reveal, matching the other pages. */
+.reveal {
+  opacity: 0;
+  animation: closingRise 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-1 {
+  animation-delay: 250ms;
+}
+
+.reveal-2 {
+  animation-delay: 500ms;
+}
+
+.reveal-3 {
+  animation-delay: 750ms;
+}
+
+.reveal-4 {
+  animation-delay: 950ms;
+}
+
+@keyframes closingRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+

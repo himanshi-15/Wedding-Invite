@@ -1,1 +1,63 @@
+
+
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  /* Wedding invite palette/fonts — per Wedding Invitation Typography Guidelines. */
+  color-scheme: light;
+  --font-script: 'Great Vibes', cursive;
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-body: 'Lora', serif;
+  --font-devanagari: 'Noto Serif Devanagari', serif;
+
+  --invite-bg: #fffaf3;
+  --invite-frame-bg: #1f1a17;
+  --invite-text: #49352b;
+  --invite-accent: #b88a3b;
+  --invite-maroon: #5e1f2e;
+  --invite-green: #4d684d;
+  --invite-max-width: 480px;
+}
+
+* ,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--invite-text);
+  background: var(--invite-frame-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+

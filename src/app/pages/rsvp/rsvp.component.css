@@ -1,0 +1,377 @@
+.rsvp-page {
+  --cover-gold: #b88a3b;
+  --cover-maroon: #5e1f2e;
+  --field-border: rgba(184, 138, 59, 0.45);
+
+  position: relative;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 9vh 22px 8vh;
+  scroll-snap-align: start;
+  background-color: #f4ead9;
+  background-image: url('/assets/images/Bg-5.jpg');
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+/* Defensive reset scoped to this page: form controls rely on
+   box-sizing: border-box so padding doesn't push widths past 100%.
+   Normally inherited from the global styles.css `*` reset, but declaring
+   it here too keeps this component visually correct even if that global
+   stylesheet isn't loaded (e.g. after copying only this component). */
+.rsvp-page,
+.rsvp-page *,
+.rsvp-page *::before,
+.rsvp-page *::after {
+  box-sizing: border-box;
+}
+
+.rsvp-title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  font-size: clamp(1.35rem, 5.8vw, 1.7rem);
+  color: var(--cover-maroon);
+  margin: 0 0 10px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 220px;
+  margin: 6px 0 14px;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background: var(--cover-gold);
+  opacity: 0.7;
+}
+
+.divider .dot {
+  color: var(--cover-gold);
+  font-size: 0.75rem;
+}
+
+.rsvp-copy {
+  font-family: var(--font-body);
+  font-size: clamp(0.78rem, 3.2vw, 0.88rem);
+  line-height: 1.5;
+  color: var(--invite-text, #49352b);
+  max-width: 260px;
+  margin: 0 0 20px;
+}
+
+.rsvp-form {
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  z-index: 2;
+}
+
+.form-field {
+  width: 100%;
+  text-align: left;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--cover-maroon);
+  margin-bottom: 8px;
+}
+
+.field-step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid var(--cover-gold);
+  color: var(--cover-gold);
+  font-size: 0.68rem;
+  flex-shrink: 0;
+}
+
+.text-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background: rgba(255, 250, 240, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #49352b;
+}
+
+.text-input::placeholder {
+  color: rgba(73, 53, 43, 0.5);
+}
+
+.text-input:focus {
+  outline: none;
+  border-color: var(--cover-gold);
+}
+
+.attend-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.attend-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 10px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--field-border);
+  background: rgba(255, 250, 240, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  line-height: 1.25;
+  color: #49352b;
+  cursor: pointer;
+  transition: background-color 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.attend-icon {
+  font-size: 0.8rem;
+}
+
+.attend-btn-yes.active {
+  background: #4d684d;
+  border-color: #4d684d;
+  color: #fdf6ea;
+}
+
+.attend-btn-no.active {
+  background: var(--cover-maroon);
+  border-color: var(--cover-maroon);
+  color: #fdf6ea;
+}
+
+.guest-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background: rgba(255, 250, 240, 0.75);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #49352b;
+  cursor: pointer;
+}
+
+.guest-dropdown.open .dropdown-trigger {
+  border-color: var(--cover-gold);
+}
+
+.chevron {
+  color: var(--cover-gold);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  list-style: none;
+  margin: 0;
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--field-border);
+  background: rgba(255, 250, 240, 0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  max-height: 160px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.dropdown-list li {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: #49352b;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-list li:hover,
+.dropdown-list li.selected {
+  background: rgba(184, 138, 59, 0.15);
+  color: var(--cover-maroon);
+}
+
+.submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: 160px;
+  margin: 4px auto 0;
+  padding: 12px 32px;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #4d684d, #3a4f3a);
+  color: #fdf6ea;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.submit-btn.submitted {
+  opacity: 1;
+  cursor: default;
+}
+
+.check {
+  font-size: 0.9rem;
+}
+
+.submit-error {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--cover-maroon);
+  text-align: center;
+  margin: 8px 0 0;
+}
+
+.thank-you {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--invite-text, #49352b);
+  margin: 14px 0 0;
+  max-width: 260px;
+}
+
+.venue-card {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 22px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--field-border);
+  background: rgba(255, 250, 240, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+.venue-label {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cover-gold);
+  margin: 0 0 4px;
+}
+
+.venue-name {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(1.15rem, 4.8vw, 1.35rem);
+  color: var(--cover-maroon);
+  margin: 0 0 2px;
+}
+
+.venue-location {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: #49352b;
+  margin: 0 0 12px;
+}
+
+.maps-btn {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--cover-gold);
+  color: var(--cover-maroon);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* Staggered reveal, matching the other pages. */
+.reveal {
+  opacity: 0;
+  animation: rsvpRise 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-1 {
+  animation-delay: 250ms;
+}
+
+.reveal-2 {
+  animation-delay: 500ms;
+}
+
+.reveal-3 {
+  animation-delay: 750ms;
+}
+
+.reveal-4 {
+  animation-delay: 950ms;
+}
+
+@keyframes rsvpRise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+    opacity: 1;
+  }
+}
