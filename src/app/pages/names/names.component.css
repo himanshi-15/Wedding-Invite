@@ -5,11 +5,13 @@
   --cover-maroon: #5e1f2e;
 
   position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 38vh 22px 34px;
+  padding: 28vh 22px 34px;
   scroll-snap-align: start;
   background-color: #f4ead9;
   background-image: url('/assets/images/Bg-1.jpg');
@@ -18,6 +20,12 @@
   background-repeat: no-repeat;
   overflow: hidden;
   text-align: center;
+}
+
+@media (max-width: 640px) {
+  .names-page {
+    padding-top: 22vh;
+  }
 }
 
 .ornate-border {
