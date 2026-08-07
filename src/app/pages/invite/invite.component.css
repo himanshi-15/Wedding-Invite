@@ -25,7 +25,7 @@
   letter-spacing: 0.12em;
   font-size: clamp(1.3rem, 5.6vw, 1.7rem);
   color: var(--cover-maroon);
-  margin: 40px 0 0;
+  margin: 40px 0 12px;
 }
 
 .invite-scratch {
@@ -36,7 +36,7 @@
   font-family: var(--font-body);
   font-size: clamp(0.74rem, 3vw, 0.85rem);
   line-height: 1.5;
-  color: var(--invite-text, #49352b);
+  color: var(--invite-text);
   max-width: 270px;
   margin: 0 0 10px;
 }
@@ -74,10 +74,11 @@
 .blessing-label,
 .hosts-label {
   font-family: var(--font-body);
+  font-weight: 600;
   font-size: 0.6rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--cover-gold);
+  letter-spacing: 0.03em;
+  text-transform: none;
+  color: #b85f1d;
 }
 
 .blessing-name,
@@ -93,7 +94,7 @@
   font-size: 0.7rem;
   line-height: 1.6;
   letter-spacing: 0.04em;
-  color: var(--invite-text, #49352b);
+  color: var(--invite-text);
   margin: 4px 0 0;
 }
 
