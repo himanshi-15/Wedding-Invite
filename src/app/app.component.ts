@@ -18,7 +18,7 @@ import { ClosingComponent } from './pages/closing/closing.component';
 })
 export class AppComponent {
   title = 'invitationSite';
-  showRsvp = environment.rsvp;
+  showRsvp = environment.RSVP;
 }
 
 
