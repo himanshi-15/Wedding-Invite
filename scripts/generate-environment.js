@@ -53,8 +53,11 @@ const env = parseEnvFile(envPath);
 
 // Netlify/CI variables from process.env take priority.
 // .env is used as a fallback for local development.
+// Accept both the canonical uppercase key and the older lowercase key for compatibility.
 const googleScriptUrl =
-  process.env.GOOGLE_SCRIPT_URL || env.GOOGLE_SCRIPT_URL || '';
+  process.env.GOOGLE_SCRIPT_URL ??
+  env.GOOGLE_SCRIPT_URL ??
+  '';
 
 const rawRsvp =
   process.env.RSVP ?? env.RSVP;
