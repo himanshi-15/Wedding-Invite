@@ -19,6 +19,12 @@ import { ClosingComponent } from './pages/closing/closing.component';
 export class AppComponent {
   title = 'invitationSite';
   showRsvp = environment.RSVP;
+
+  ngOnChanges()
+  {
+    console.log('RSVP:', environment.RSVP);
+    console.log('API:', environment.googleScriptUrl);
+  }
 }
 
 
