@@ -91,3 +91,21 @@ fs.writeFileSync(outPath, content, 'utf8');
 console.log(`Generated ${path.relative(rootDir, outPath)}`);
 console.log(`GOOGLE_SCRIPT_URL: ${googleScriptUrl ? 'configured' : 'not configured'}`);
 console.log(`RSVP: ${rsvpValue}`);
+
+//debug
+
+const googleScriptUrl =
+  process.env.GOOGLE_SCRIPT_URL || env.GOOGLE_SCRIPT_URL || '';
+
+const rawRsvp =
+  process.env.RSVP ?? env.RSVP;
+
+console.log(
+  'GOOGLE_SCRIPT_URL configured:',
+  Boolean(googleScriptUrl)
+);
+
+console.log(
+  'RSVP:',
+  rawRsvp
+);

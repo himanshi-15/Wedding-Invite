@@ -20,11 +20,6 @@ export class AppComponent {
   title = 'invitationSite';
   showRsvp = environment.RSVP;
 
-  ngOnInit()
-  {
-    console.log('RSVP:', environment.RSVP);
-    console.log('API:', environment.googleScriptUrl);
-  }
 }
 
 
