@@ -95,7 +95,7 @@ console.log(`RSVP: ${rsvpValue}`);
 //debug
 
 const googleScriptUrl =
-  process.env.GOOGLE_SCRIPT_URL || env.GOOGLE_SCRIPT_URL || '';
+  process.env.googleScriptUrl || env.googleScriptUrl || '';
 
 const rawRsvp =
   process.env.RSVP ?? env.RSVP;
