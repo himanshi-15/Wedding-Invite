@@ -325,17 +325,31 @@
 }
 
 .maps-btn {
-  display: inline-block;
-  padding: 8px 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
   border-radius: 999px;
-  border: 1px solid var(--cover-gold);
-  color: var(--cover-maroon);
+  border: 1px solid #6e3007;
+  color: #6e3007;
+  background: rgba(255,250,240,0.95);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-decoration: none;
+}
+
+.maps-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  fill: currentColor;
+}
+
+.maps-text {
+  display: inline-block;
 }
 
 /* Staggered reveal, matching the other pages. */

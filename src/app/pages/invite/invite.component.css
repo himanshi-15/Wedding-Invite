@@ -25,8 +25,8 @@
   font-family: var(--font-heading);
   font-weight: 600;
   letter-spacing: 0.12em;
-  font-size: clamp(1.3rem, 5.6vw, 1.7rem);
-  color: var(--cover-maroon);
+  font-size: clamp(1.6rem, 6vw, 2rem);
+  color: #6e3007;
   margin: 40px 0 12px;
 }
 
@@ -36,9 +36,9 @@
 
 .invite-copy {
   font-family: var(--font-body);
-  font-size: clamp(0.74rem, 3vw, 0.85rem);
+  font-size: clamp(0.94rem, 3.6vw, 1.05rem);
   line-height: 1.5;
-  color: var(--invite-text);
+  color: #2b2222;
   max-width: 270px;
   margin: 0 0 10px;
 }
@@ -77,26 +77,26 @@
 .hosts-label {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.6rem;
+  font-size: 0.82rem;
   letter-spacing: 0.03em;
   text-transform: none;
-  color: #b85f1d;
+  color: #6e3007;
 }
 
 .blessing-name,
 .hosts-name {
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: clamp(0.8rem, 3.3vw, 0.92rem);
-  color: var(--cover-maroon);
+  font-size: clamp(1rem, 4.2vw, 1.1rem);
+  color: #6e3007;
 }
 
 .location {
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.86rem;
   line-height: 1.6;
   letter-spacing: 0.04em;
-  color: var(--invite-text);
+  color: #2b2222;
   margin: 4px 0 0;
 }
 
