@@ -67,7 +67,7 @@ export class RsvpComponent {
     });
 
     try {
-      if (!environment.googleScriptUrl) {
+      if (!environment.GOOGLE_SCRIPT_URL) {
         throw new Error('Missing Google Script URL');
       }
       // Apps Script's doPost() parses e.postData.contents as JSON, so the
@@ -77,7 +77,7 @@ export class RsvpComponent {
       // "simple" request compatible with mode: 'no-cors'. That also means
       // the response is opaque — we can't confirm success from it, so we
       // treat a resolved fetch (no network/DNS failure) as success.
-      await fetch(environment.googleScriptUrl, {
+      await fetch(environment.GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         body: payload
