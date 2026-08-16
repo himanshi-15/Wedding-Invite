@@ -94,9 +94,6 @@ console.log(`RSVP: ${rsvpValue}`);
 
 //debug
 
-const rawRsvp =
-  process.env.RSVP ?? env.RSVP;
-
 console.log(
   'GOOGLE_SCRIPT_URL configured:',
   Boolean(googleScriptUrl)
