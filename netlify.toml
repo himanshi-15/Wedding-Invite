@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  publish = "dist/wedding-invite"
+
+[context.production.environment]
+  RSVP = "false"
+
+[context.deploy-preview.environment]
+  RSVP = "true"
+
+[context.branch-deploy.environment]
+  RSVP = "true"
